@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f2f1ed;
+  --bg-alt: #e8e6e0;
+  --panel: #fbfaf8;
+  --text: #17181b;
+  --text-dim: rgba(23, 24, 27, 0.62);
+  --text-dimmer: rgba(23, 24, 27, 0.42);
+  --line: rgba(23, 24, 27, 0.14);
+  --line-strong: rgba(23, 24, 27, 0.26);
+  --fill-ghost: rgba(23, 24, 27, 0.05);
+  --fill-solid: #17181b;
+  --accent: #04339a;
+  --accent-dark: #052a7d;
+  --gutter: clamp(20px, 5vw, 100px);
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-panel: var(--panel);
+  --color-text: var(--text);
+  --font-display: var(--font-sora);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sora), "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container-gutter {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.mono-label {
+  font-family: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.chip {
+  display: inline-block;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: clamp(12px, 0.78vw, 14px);
+  background: var(--fill-ghost);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: clamp(8px, 0.8vw, 12px) clamp(14px, 1.1vw, 20px);
+  line-height: 1;
+  color: var(--text-dim);
+}
+
+.btn-ghost,
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: clamp(12px, 0.82vw, 14px);
+  border-radius: var(--radius);
+  padding: clamp(14px, 1.3vw, 20px) clamp(24px, 2vw, 36px);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-premium);
+  white-space: nowrap;
+}
+
+.btn-ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--fill-ghost);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-solid {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #f5f4f1;
+}
+
+.btn-solid:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.nav-link {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: clamp(13px, 0.85vw, 15px);
+  color: var(--text);
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.section-dark .btn-ghost {
+  border-color: rgba(245, 244, 241, 0.4);
+  color: #f5f4f1;
+}
+
+.section-dark .btn-ghost:hover {
+  background: rgba(245, 244, 241, 0.1);
+  border-color: #f5f4f1;
+  color: #f5f4f1;
+}
+
+.avatar-initials {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.link-hover {
+  transition: color 0.2s ease;
+}
+
+.link-hover:hover {
+  color: var(--accent);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-premium), transform 0.8s var(--ease-premium);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-dropdown-toggle {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-dropdown-toggle span {
+  position: absolute;
+  background: var(--text);
+  transition: transform 0.3s var(--ease-premium), opacity 0.2s ease;
+}
+
+.nav-dropdown-toggle .bar-h {
+  width: 10px;
+  height: 1px;
+}
+
+.nav-dropdown-toggle .bar-v {
+  width: 1px;
+  height: 10px;
+}
+
+.nav-dropdown-toggle[aria-expanded="true"] .bar-v {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
