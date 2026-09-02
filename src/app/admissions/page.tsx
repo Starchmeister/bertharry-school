@@ -6,7 +6,7 @@ import { downloads } from "@/data/site";
 export const metadata: Metadata = {
   title: "Admissions — Bertharry English Private School",
   description:
-    "2025 admissions are now open at Bertharry English Private School, Tembisa. Learn about the process and apply online.",
+    "Admissions are now open at Bertharry English Private School, Tembisa. Learn about the process and apply online.",
 };
 
 const steps = [
@@ -28,12 +28,14 @@ const steps = [
 ];
 
 export default function AdmissionsPage() {
+  const year = new Date().getFullYear();
+
   return (
     <>
       <PageHeader
         eyebrow="Admissions"
         title="Admissions"
-        description="2025 admissions are now open. Here's how to register your child at Bertharry English Private School."
+        description={`${year} admissions are now open. Here's how to register your child at Bertharry English Private School.`}
       />
 
       <section className="container-gutter py-20 md:py-28 grid rounded-xl overflow-hidden border-t border-l border-[var(--line)] md:grid-cols-3">

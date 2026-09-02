@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { team } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us — Bertharry English Private School",
@@ -35,17 +34,6 @@ const enrollFeatures = [
   "Certificate of Excellence",
   "Career Oriented",
 ];
-
-function initials(name: string) {
-  return name
-    .replace(/[^A-Za-z .]/g, "")
-    .split(" ")
-    .filter(Boolean)
-    .map((p) => p[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
 
 export default function AboutPage() {
   return (
@@ -226,27 +214,35 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      {/* Team */}
-      <section id="team" className="bg-[var(--bg-alt)] border-y border-[var(--line)] scroll-mt-24">
+      {/* Leadership */}
+      <section id="leadership" className="bg-[var(--bg-alt)] border-y border-[var(--line)] scroll-mt-24">
         <div className="container-gutter py-20 md:py-28">
-          <span className="chip">The People</span>
+          <span className="chip">Leadership</span>
           <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(28px,3.4vw,44px)] leading-tight mt-6 mb-14">
-            Our Team
+            School Leadership
           </h2>
 
-          <div className="grid rounded-xl overflow-hidden border-t border-l border-[var(--line)] sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member, i) => (
+          <div className="grid gap-6 sm:grid-cols-3 max-w-3xl">
+            {[
+              { name: "T. Montjane", role: "School Principal", img: "/principals/T.-MOTJANE.webp" },
+              { name: "H. Kujinga", role: "Deputy Principal", img: "/principals/H.-KUJINGADEPUTY-PRINCIPAL.webp" },
+              { name: "W. Moyo", role: "Deputy Principal", img: "/principals/MOYO-DEPUTY-PRINCIPAL-scaled (1).webp" },
+            ].map((member) => (
               <div
-                key={`${member.name}-${i}`}
-                className="bg-[var(--panel)] p-6 flex items-center gap-4 border-r border-b border-[var(--line)]"
+                key={member.name}
+                className="bg-[var(--panel)] rounded-xl border border-[var(--line)] overflow-hidden flex flex-col"
               >
-                <div className="avatar-initials">{initials(member.name)}</div>
-                <div>
-                  <p className="font-[family-name:var(--font-sora)] leading-snug">
-                    {member.name}
-                  </p>
-                  <p className="mono-label text-[11px] text-[var(--text-dimmer)] mt-1">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full aspect-[3/4] object-cover object-top"
+                />
+                <div className="p-6 flex flex-col gap-1">
+                  <p className="mono-label text-[11px] text-[var(--text-dimmer)]">
                     {member.role}
+                  </p>
+                  <p className="font-[family-name:var(--font-sora)] text-xl leading-snug">
+                    {member.name}
                   </p>
                 </div>
               </div>

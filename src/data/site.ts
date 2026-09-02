@@ -20,7 +20,16 @@ export const navLinks = [
       { label: "High School", href: "/academics/high-school" },
     ],
   },
-  { label: "Admissions", href: "/admissions" },
+  {
+    label: "Admissions",
+    href: "/admissions",
+    children: [
+      { label: "Admissions Overview", href: "/admissions" },
+      { label: "Fee Structure", href: "/admissions/fee-structure" },
+      { label: "Uniforms", href: "/admissions/uniforms" },
+      { label: "Textbooks", href: "/admissions/textbooks" },
+    ],
+  },
   { label: "Our Gallery", href: "/gallery" },
   { label: "Apply Online", href: "/apply" },
   { label: "Contact Us", href: "/contact" },

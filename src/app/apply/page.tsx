@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function ApplyPage() {
+  const year = new Date().getFullYear();
+
   return (
     <>
       <PageHeader
@@ -19,7 +21,7 @@ export default function ApplyPage() {
 
       <section className="container-gutter py-20 md:py-28">
         <div className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-10 md:p-16 text-center max-w-2xl mx-auto">
-          <span className="chip">2025 Admissions Open</span>
+          <span className="chip">{year} Admissions Now Open</span>
           <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(26px,3.4vw,40px)] leading-tight mt-6">
             Apply via the D6 Platform
           </h2>
@@ -29,16 +31,13 @@ export default function ApplyPage() {
             application.
           </p>
           <a
-            href="#"
+            href="https://3851.d6plus.co.za/register/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-solid mt-10"
-            aria-disabled="true"
           >
             Apply on D6
           </a>
-          <p className="mt-4 text-xs text-[var(--text-dimmer)]">
-            This button links out to Bertharry&apos;s D6 application
-            platform — awaiting the school&apos;s D6 portal URL to go live.
-          </p>
         </div>
 
         <p className="text-center mt-10 text-[var(--text-dim)]">

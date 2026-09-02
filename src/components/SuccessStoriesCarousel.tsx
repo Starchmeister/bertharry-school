@@ -60,6 +60,7 @@ export default function SuccessStoriesCarousel() {
             aria-current={active}
             aria-label={`${person.name}, ${person.role}`}
             onClick={() => setActiveItem(index)}
+            onTouchEnd={(e) => { e.preventDefault(); setActiveItem(index); }}
             onMouseEnter={() => setHoveredItem(index)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -77,7 +78,7 @@ export default function SuccessStoriesCarousel() {
               src={person.img}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-500"
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-[filter] duration-500"
               style={{
                 filter: active
                   ? "grayscale(0.1) saturate(1.05)"

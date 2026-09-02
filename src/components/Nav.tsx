@@ -198,7 +198,7 @@ export default function Nav() {
 
       <div className="bg-[var(--accent)] text-[#f5f4f1]">
         <p className="container-gutter py-2.5 text-center mono-label text-[13px]">
-          2025 Admissions are now open —{" "}
+          {new Date().getFullYear()} Admissions are now open —{" "}
           <Link href="/admissions" className="underline underline-offset-4">
             Apply Now
           </Link>
