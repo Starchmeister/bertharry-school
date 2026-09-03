@@ -82,10 +82,20 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[var(--line)]">
-        <p className="container-gutter py-5 text-center text-xs text-[var(--text-dimmer)] mono-label">
-          © {new Date().getFullYear()} Bertharry English Private School — All
-          Rights Reserved
-        </p>
+        <div className="container-gutter py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[var(--text-dimmer)] mono-label">
+          <p>© {new Date().getFullYear()} Bertharry English Private School — All Rights Reserved</p>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://bluedeed.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+            >
+              © Bluedeed
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
