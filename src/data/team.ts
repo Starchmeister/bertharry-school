@@ -1,15 +1,5 @@
 export const team = [
-  { name: "T. Montjane", role: "School Principal" },
-  { name: "H. Kujinga", role: "Deputy Principal" },
-  { name: "W. Moyo", role: "Deputy Principal" },
-  { name: "P. Mnyamana", role: "Head of Department" },
-  { name: "E. Nkoana", role: "Head of Department" },
-  { name: "I. Munyanyiwa", role: "Head of Department" },
-  { name: "L. Ndlovu", role: "Head of Department" },
-  { name: "M. Margreth", role: "Head of Department" },
-  { name: "M. Sithole", role: "Head of Department" },
-  { name: "S. Fuyana", role: "Head of Department" },
-  { name: "P. Moyo", role: "Head of Department" },
-  { name: "M. Zengeya", role: "Head of Department" },
-  { name: "W. Moyo", role: "Head of Department" },
+  { name: "T. Montjane", role: "School Principal", img: "/Principals/T.-MOTJANE.webp" },
+  { name: "H. Kujinga", role: "Deputy Principal", img: "/Principals/H.-KUJINGADEPUTY-PRINCIPAL.webp" },
+  { name: "W. Moyo", role: "Deputy Principal", img: "/Principals/MOYO-DEPUTY-PRINCIPAL-scaled (1).webp" },
 ];

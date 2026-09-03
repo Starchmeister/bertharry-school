@@ -59,7 +59,7 @@ export default function PrimaryPage() {
             enriching their understanding of various subjects.
           </p>
         </div>
-        <ImagePlaceholder className="aspect-[4/5]" />
+        <img src="/Gallery/facilities/classrooms/cl3.png" alt="Primary classroom" className="aspect-[4/5] object-cover rounded-xl w-full" loading="lazy" />
       </section>
 
       {/* Outcomes */}

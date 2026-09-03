@@ -60,7 +60,7 @@ export default function TextbooksPage() {
           </p>
         </div>
 
-        <ImagePlaceholder label="Textbook Store" className="aspect-[4/3]" />
+        <img src="/Gallery/facilities/bookshop/b1.png" alt="Textbook store" className="aspect-[4/3] object-cover rounded-xl w-full" loading="lazy" />
       </section>
     </>
   );

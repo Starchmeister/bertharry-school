@@ -59,7 +59,7 @@ export default function PrePrimaryPage() {
             future success in both school and beyond.
           </p>
         </div>
-        <ImagePlaceholder className="aspect-[4/5]" />
+        <img src="/Gallery/facilities/classrooms/cl2.png" alt="Pre-primary classroom" className="aspect-[4/5] object-cover rounded-xl w-full" loading="lazy" />
       </section>
 
       {/* Core skills */}

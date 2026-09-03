@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { team } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us — Bertharry English Private School",
@@ -78,7 +79,7 @@ export default function AboutPage() {
         </div>
 
         <div>
-        <ImagePlaceholder className="aspect-[4/3] mb-6" />
+        <img src="/Gallery/facilities/school buildings/sb2.png" alt="Bertharry school building" className="aspect-[4/3] object-cover rounded-xl mb-6 w-full" loading="lazy" />
         <div className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-8 md:p-10">
           <p className="mono-label text-[11px] text-[var(--text-dimmer)]">
             Our Alumni Go On To Become
@@ -214,36 +215,29 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      {/* Leadership */}
-      <section id="leadership" className="bg-[var(--bg-alt)] border-y border-[var(--line)] scroll-mt-24">
+      {/* Our Team */}
+      <section id="team" className="bg-[var(--bg-alt)] border-y border-[var(--line)] scroll-mt-24">
         <div className="container-gutter py-20 md:py-28">
-          <span className="chip">Leadership</span>
+          <span className="chip">The People</span>
           <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(28px,3.4vw,44px)] leading-tight mt-6 mb-14">
-            School Leadership
+            Our Team
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-3 max-w-3xl">
-            {[
-              { name: "T. Montjane", role: "School Principal", img: "/principals/T.-MOTJANE.webp" },
-              { name: "H. Kujinga", role: "Deputy Principal", img: "/principals/H.-KUJINGADEPUTY-PRINCIPAL.webp" },
-              { name: "W. Moyo", role: "Deputy Principal", img: "/principals/MOYO-DEPUTY-PRINCIPAL-scaled (1).webp" },
-            ].map((member) => (
+            {team.map((member) => (
               <div
-                key={member.name}
+                key={`${member.name}-${member.img}`}
                 className="bg-[var(--panel)] rounded-xl border border-[var(--line)] overflow-hidden flex flex-col"
               >
                 <img
                   src={member.img}
                   alt={member.name}
                   className="w-full aspect-[3/4] object-cover object-top"
+                  loading="lazy"
                 />
-                <div className="p-6 flex flex-col gap-1">
-                  <p className="mono-label text-[11px] text-[var(--text-dimmer)]">
-                    {member.role}
-                  </p>
-                  <p className="font-[family-name:var(--font-sora)] text-xl leading-snug">
-                    {member.name}
-                  </p>
+                <div className="p-5 flex flex-col gap-1">
+                  <p className="mono-label text-[11px] text-[var(--text-dimmer)]">{member.role}</p>
+                  <p className="font-[family-name:var(--font-sora)] text-lg leading-snug">{member.name}</p>
                 </div>
               </div>
             ))}

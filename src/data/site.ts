@@ -30,7 +30,15 @@ export const navLinks = [
       { label: "Textbooks", href: "/admissions/textbooks" },
     ],
   },
-  { label: "Our Gallery", href: "/gallery" },
+  {
+    label: "Our Gallery",
+    href: "/gallery",
+    children: [
+      { label: "Events", href: "/gallery/events" },
+      { label: "Extra-Curricular", href: "/gallery/extracurricular" },
+      { label: "Facilities", href: "/gallery/facilities" },
+    ],
+  },
   { label: "Apply Online", href: "/apply" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -46,8 +54,6 @@ export const quickLinks = [
 ];
 
 export const downloads = [
-  { label: "Fee Structure", href: "#" },
-  { label: "Registration Form", href: "#" },
-  { label: "School Brochure", href: "#" },
-  { label: "Course Structure", href: "#" },
+  { label: "Fee Structure 2027", href: "/downloads/Fees Structure 2027 -1.pdf" },
+  { label: "Registration Form", href: "/downloads/D6 Enrolment Form and Contract of Enrolment 24.08.2026.pdf" },
 ];

@@ -54,7 +54,7 @@ export default function UniformsPage() {
           </p>
         </div>
 
-        <ImagePlaceholder label="Uniform Store" className="aspect-[4/3]" />
+        <img src="/Gallery/facilities/school uniform shop/us1.png" alt="Uniform store" className="aspect-[4/3] object-cover rounded-xl w-full" loading="lazy" />
       </section>
     </>
   );

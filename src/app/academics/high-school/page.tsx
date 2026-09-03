@@ -66,7 +66,7 @@ export default function HighSchoolPage() {
             communication skills.
           </p>
         </div>
-        <ImagePlaceholder className="aspect-[4/5]" />
+        <img src="/Gallery/facilities/school hall/sh1.png" alt="High school" className="aspect-[4/5] object-cover rounded-xl w-full" loading="lazy" />
       </section>
 
       {/* Outcomes */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { phases } from "@/data/academics";
+import { team } from "@/data/team";
 import SuccessStoriesCarousel from "@/components/SuccessStoriesCarousel";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
@@ -12,10 +13,10 @@ const whyStudy = [
 ];
 
 const galleryPreview = [
-  { label: "Uniform", href: "/gallery#uniform" },
-  { label: "Events", href: "/gallery#events" },
-  { label: "Our Facilities", href: "/gallery#facilities" },
-  { label: "Extracurricular Activities", href: "/gallery#extracurricular" },
+  { label: "Events", href: "/gallery/events", img: "/Gallery/events/Career day/imgi_2_01.webp" },
+  { label: "Extra-Curricular", href: "/gallery/extracurricular", img: "/Gallery/Extra Circular – Berthharry English Private School/soccer/imgi_20_S1-1.webp" },
+  { label: "Facilities", href: "/gallery/facilities", img: "/Gallery/facilities/classrooms/cl1.png" },
+  { label: "Our Team", href: "/#team", img: "/Gallery/events/Celebrating Acheivements/imgi_6_cel2.webp" },
 ];
 
 const admissionSteps = [
@@ -126,8 +127,8 @@ export default function Home() {
 
           <div>
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <ImagePlaceholder className="aspect-square mt-8" />
-              <ImagePlaceholder className="aspect-square" />
+              <img src="/Gallery/facilities/school buildings/sb1.png" alt="School building" className="aspect-square object-cover rounded-xl mt-8 w-full" />
+              <img src="/Gallery/facilities/classrooms/cl1.png" alt="Classroom" className="aspect-square object-cover rounded-xl w-full" />
             </div>
             <ul>
               {whyStudy.map((item, i) => (
@@ -211,36 +212,29 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* School Leadership */}
-      <section id="leadership" className="bg-[var(--bg-alt)] border-y border-[var(--line)]">
+      {/* Our Team */}
+      <section id="team" className="bg-[var(--bg-alt)] border-y border-[var(--line)]">
         <div className="container-gutter py-20 md:py-28">
-          <span className="chip">Leadership</span>
+          <span className="chip">The People</span>
           <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(30px,3.6vw,46px)] leading-tight mt-6 mb-14">
-            School Leadership
+            Our Team
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-3 max-w-3xl">
-            {[
-              { name: "T. Montjane", role: "School Principal", img: "/principals/T.-MOTJANE.webp" },
-              { name: "H. Kujinga", role: "Deputy Principal", img: "/principals/H.-KUJINGADEPUTY-PRINCIPAL.webp" },
-              { name: "W. Moyo", role: "Deputy Principal", img: "/principals/MOYO-DEPUTY-PRINCIPAL-scaled (1).webp" },
-            ].map((member) => (
+            {team.map((member) => (
               <div
-                key={member.name}
+                key={`${member.name}-${member.img}`}
                 className="bg-[var(--panel)] rounded-xl border border-[var(--line)] overflow-hidden flex flex-col"
               >
                 <img
                   src={member.img}
                   alt={member.name}
                   className="w-full aspect-[3/4] object-cover object-top"
+                  loading="lazy"
                 />
-                <div className="p-6 flex flex-col gap-1">
-                  <p className="mono-label text-[11px] text-[var(--text-dimmer)]">
-                    {member.role}
-                  </p>
-                  <p className="font-[family-name:var(--font-sora)] text-xl leading-snug">
-                    {member.name}
-                  </p>
+                <div className="p-5 flex flex-col gap-1">
+                  <p className="mono-label text-[11px] text-[var(--text-dimmer)]">{member.role}</p>
+                  <p className="font-[family-name:var(--font-sora)] text-lg leading-snug">{member.name}</p>
                 </div>
               </div>
             ))}
@@ -264,8 +258,9 @@ export default function Home() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {galleryPreview.map((item) => (
-            <Link key={item.label} href={item.href} className="block">
-              <ImagePlaceholder label={item.label} className="aspect-square" />
+            <Link key={item.label} href={item.href} className="block group relative rounded-xl overflow-hidden aspect-square border border-[var(--line)]">
+              <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <span className="absolute bottom-3 left-3 mono-label text-[10px] bg-[var(--bg)] border border-[var(--line)] rounded-md px-2.5 py-1.5">{item.label}</span>
             </Link>
           ))}
         </div>
@@ -304,16 +299,8 @@ export default function Home() {
       {/* CTA */}
       <section className="section-dark bg-[var(--fill-solid)] text-[#f5f4f1]">
         <div className="container-gutter py-20 md:py-28 grid items-center gap-10 lg:grid-cols-[1fr_1.4fr_1fr]">
-          <div
-            className="hidden lg:flex items-end p-5 aspect-[4/5] rounded-xl border border-[rgba(245,244,241,0.16)] overflow-hidden"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(245,244,241,0.06) 0px, rgba(245,244,241,0.06) 1px, transparent 1px, transparent 14px)",
-            }}
-          >
-            <span className="mono-label text-[10px] text-[rgba(245,244,241,0.5)] border border-[rgba(245,244,241,0.2)] rounded-md px-2.5 py-1.5">
-              Photo Pending
-            </span>
+          <div className="hidden lg:block aspect-[4/5] rounded-xl overflow-hidden">
+            <img src="/Gallery/events/Celebrating Acheivements/imgi_7_cel3.webp" alt="Students celebrating" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="text-center">
             <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(28px,4vw,52px)] leading-tight">
@@ -328,16 +315,8 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div
-            className="hidden lg:flex items-end p-5 aspect-[4/5] rounded-xl border border-[rgba(245,244,241,0.16)] overflow-hidden"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(245,244,241,0.06) 0px, rgba(245,244,241,0.06) 1px, transparent 1px, transparent 14px)",
-            }}
-          >
-            <span className="mono-label text-[10px] text-[rgba(245,244,241,0.5)] border border-[rgba(245,244,241,0.2)] rounded-md px-2.5 py-1.5">
-              Photo Pending
-            </span>
+          <div className="hidden lg:block aspect-[4/5] rounded-xl overflow-hidden">
+            <img src="/Gallery/events/Celebrating Acheivements/imgi_8_cel4.webp" alt="Students celebrating" className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>

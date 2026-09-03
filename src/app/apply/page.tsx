@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function ApplyPage() {
-  const year = new Date().getFullYear();
+  const now = new Date();
+  const year = now.getMonth() >= 8 ? now.getFullYear() + 1 : now.getFullYear();
 
   return (
     <>

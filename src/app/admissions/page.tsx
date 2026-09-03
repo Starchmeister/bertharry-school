@@ -28,7 +28,8 @@ const steps = [
 ];
 
 export default function AdmissionsPage() {
-  const year = new Date().getFullYear();
+  const now = new Date();
+  const year = now.getMonth() >= 8 ? now.getFullYear() + 1 : now.getFullYear();
 
   return (
     <>
@@ -60,16 +61,20 @@ export default function AdmissionsPage() {
           <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(26px,3.4vw,42px)] leading-tight mt-6 mb-12 max-w-2xl">
             Everything you need to register
           </h2>
-          <div className="grid rounded-xl overflow-hidden border-t border-l border-[var(--line)] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid rounded-xl overflow-hidden border-t border-l border-[var(--line)] sm:grid-cols-2">
             {downloads.map((d) => (
               <a
                 key={d.label}
                 href={d.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[var(--panel)] p-8 flex flex-col justify-between gap-8 hover:bg-[var(--fill-ghost)] transition-colors border-r border-b border-[var(--line)]"
               >
-                <span className="mono-label text-[11px] text-[var(--text-dimmer)]">
-                  PDF
-                </span>
+                <img
+                  src="/Adobe_Acrobat_Reader_icon_(2020).svg"
+                  alt="PDF"
+                  className="w-8 h-8"
+                />
                 <span className="text-lg leading-snug">{d.label}</span>
               </a>
             ))}

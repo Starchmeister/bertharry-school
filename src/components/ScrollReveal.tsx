@@ -7,6 +7,8 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const sections = Array.from(

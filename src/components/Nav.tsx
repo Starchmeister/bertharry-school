@@ -198,7 +198,7 @@ export default function Nav() {
 
       <div className="bg-[var(--accent)] text-[#f5f4f1]">
         <p className="container-gutter py-2.5 text-center mono-label text-[13px]">
-          {new Date().getFullYear()} Admissions are now open —{" "}
+          {(() => { const now = new Date(); return now.getMonth() >= 8 ? now.getFullYear() + 1 : now.getFullYear(); })()} Admissions are now open —{" "}
           <Link href="/admissions" className="underline underline-offset-4">
             Apply Now
           </Link>
