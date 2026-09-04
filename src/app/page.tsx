@@ -242,6 +242,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Accreditations */}
+      <section className="container-gutter py-16 md:py-20 border-b border-[var(--line)]">
+        <span className="chip">Accreditations</span>
+        <h2 className="font-[family-name:var(--font-sora)] font-light text-[clamp(24px,3vw,36px)] leading-tight mt-6 mb-10">
+          Officially Accredited
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 max-w-2xl">
+          <div className="flex flex-col gap-4 rounded-xl border border-[var(--line)] bg-[var(--panel)] p-8">
+            <img src="/accreditations/umalusu.png" alt="Umalusi" className="h-16 w-auto object-contain" />
+            <p className="text-sm text-[var(--text-dim)] leading-relaxed">
+              <span className="font-[family-name:var(--font-sora)] text-[var(--text)]">Umalusi</span> — South Africa&apos;s official Council for Quality Assurance in General and Further Education and Training.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 rounded-xl border border-[var(--line)] bg-[var(--panel)] p-8">
+            <img src="/accreditations/gauteng.png" alt="Gauteng Department of Education" className="h-16 w-auto object-contain" />
+            <p className="text-sm text-[var(--text-dim)] leading-relaxed">
+              <span className="font-[family-name:var(--font-sora)] text-[var(--text)]">Gauteng Department of Education</span> — Registered and recognised by the Gauteng provincial education authority.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery preview */}
       <section className="container-gutter py-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">

@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://www.bertharryschools.co.za/sitemap.xml",
+    host: "https://www.bertharryschools.co.za",
   };
 }
