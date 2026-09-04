@@ -6,6 +6,7 @@ export const site = {
   email: "bertharry@bertharryschools.co.za",
   phone: "+27 (011) 924 6012",
   website: "www.bertharryschools.co.za",
+  facebook: "https://www.facebook.com/share/1EJtRb2tzs/?mibextid=wwXIfr",
 };
 
 export const navLinks = [

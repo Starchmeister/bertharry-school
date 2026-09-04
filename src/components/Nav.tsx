@@ -38,7 +38,7 @@ export default function Nav() {
           >
             {site.phone}
           </a>
-          <a href="#" aria-label="Facebook" className="mono-label text-[11px] link-hover">
+          <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="mono-label text-[11px] link-hover">
             Facebook
           </a>
         </div>

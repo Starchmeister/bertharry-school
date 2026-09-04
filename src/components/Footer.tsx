@@ -77,6 +77,11 @@ export default function Footer() {
                 {site.website}
               </a>
             </li>
+            <li>
+              <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="link-hover">
+                Facebook
+              </a>
+            </li>
           </ul>
         </div>
       </div>
